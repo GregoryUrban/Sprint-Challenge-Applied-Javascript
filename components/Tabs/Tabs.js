@@ -2,28 +2,43 @@ class TabLink {
   constructor(tabElement){
     // assign this.tabElement to the tabElement DOM reference
     // this.tabElement;
+    this.tabElement = tabElement;
     
     // Get the `data-tab` value from this.tabElement and store it here
     // this.tabData = ; 
+    this.tabData = this.tabElement.querySelectorAll(`.data-tab`);
+    // this.tabData = this.tabElement.querySelector(`.data-tab`);
+    // this.tabData = this.tabElement.dataset.tab;
+    // this.tabData = document.querySelector(`.data-tab[tab='${this.data}']`);
+    // console.log(tabData);
     
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
     
-    /* <- Delete this comment block when you work on the if statement
+    // /* <- Delete this comment block when you work on the if statement
     // Check to see if this.tabData is equal to 'all'
-    if(){
+    if(this.tabData === 'all'){
       // If `all` is true, select all cards regardless of their data attribute values
       // this.cards = ;
+      this.cards = card;
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
       // this.cards = ;
+      this.cards = document.querySelector(`.card[data-tab='${this.card}']`);
     }
-    /* <- Delete this comment block when you work on the if statement
+    // /* <- Delete this comment block when you work on the if statement
 
-     // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
+     // Map over the newly converted NodeList we just created in our if statement above. 
+    //  Convert each this.cards element into a new instance of the TabCard class. 
+    // Pass in a card object to the TabCard class. 
     // this.cards = Array.from(this.cards).map();
+    this.cards = Array.from(this.cards).map( (TabCard) => new TabCard(this.card));
+    // or 
+    // this.cards = Array.from(this.cards).map( (TabCard) => cards.push(card));
 
     // Add a click event that invokes this.selectTab
     // this.tabElement.addEventListener();
+    this.tabElement.addEventListener('click', () => this.selectTab());
+
   }
 
   selectTab(){
@@ -68,5 +83,6 @@ class TabCard {
 
 - In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
 
+
 */
-let tabs = document.querySelectorAll();
+let tabs = document.querySelectorAll('.tab').forEach( tab => new TabLink(tab));
