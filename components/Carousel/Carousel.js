@@ -1,7 +1,7 @@
 class Carousel {
     constructor(carousel){ //    1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
     this.carousel = carousel;
-    this.imgs = document.querySelectorAll(`img`); //    2. You will need to grab a reference to all of the images
+    this.imgs = document.querySelectorAll(`.carousel img`); //    2. You will need to grab a reference to all of the images
     this.left = document.querySelector('.left-button');//    1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
     this.right = document.querySelector('.right-button');//    1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
 
